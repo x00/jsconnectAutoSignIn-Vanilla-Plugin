@@ -20,7 +20,7 @@ class jsConnectAutoSignInPlugin extends Gdn_Plugin {
       $Sender->AddJSFile('jsconnectAuto.js', 'plugins/jsconnectAutoSignIn');
       $Sender->AddDefinition('Connecting', T('jsconnectAutoSignIn.Connecting','Connecting...'));
       $Sender->AddDefinition('ConnectingUser', T('jsconnectAutoSignIn.ConnectingUser','Hi % just connecting you to forum...'));
-      if (C('Plugins.jsconnectAutoSignIn.HideConnectButton') || IsMobile()) {
+      if (C('Plugins.jsConnectAutoSignIn.HideConnectButton') || IsMobile()) {
         $Sender->Head->AddString('<style type="text/css">.ConnectButton{display:none!important;}</style>');
       }
       $Providers = $this->GetProviders();
@@ -35,8 +35,8 @@ class jsConnectAutoSignInPlugin extends Gdn_Plugin {
           Redirect($Target);
       }
     }
-    
-    if(C('Plugins.jsconnectAutoSignIn.HideSignIn')){
+
+    if (C('Plugins.jsConnectAutoSignIn.HideSignIn')) {
       $Sender->Head->AddString('<script type="text/javascript">' .
         'jQuery(document).ready(function($){' .
           '$(\'.ConnectButton,.SignInItem,a[href*="entry/signin"],a[href*="entry/signout"]\').hide();' .
