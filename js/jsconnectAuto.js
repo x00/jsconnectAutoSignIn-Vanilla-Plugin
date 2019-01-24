@@ -76,7 +76,7 @@ jQuery(document).ready(function($) {
   }
    
   function jsconnectAuto(provider) {
-    var connectUrl = gdn.url('/entry.json/jsconnectauto?client_id='+provider['AuthenticationKey']+'&Target='+provider['Target']);
+    var connectUrl = gdn.url('/entry/jsconnectauto.json?client_id='+provider['AuthenticationKey']+'&Target='+provider['Target']);
     AutoAuthenticate(connectUrl);
   };
 
